@@ -1,0 +1,80 @@
+---
+title: "Iris"
+author: "Simon Ballesteros"
+date: "19 de febrero de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Aprender R con iris
+
+Iris es un conjunto de datos ampliamente conocido. Introducido por Fisher (1936), contiene 150 muestras de tres especies de flores (setosa, virginica y versicolor) y cuatro medidas para cada muestra, en centimetros: longitud y anchura del petalo y longitud y anchura del sepalo. 
+
+## Un vistazo a los datos
+Los datos de _iris_ se usan en este articulo para demostrar la exploracion de datos con R. En primer lugar verificamos el tamano y la estructura del conjunto de datos. La dimension y los nombres de los datos se obtienen respectivamente con las funciones *dim()* y *names()*. Las funciones *str()* y *attributes()* devuelven la estructura y los atributos de los datos.
+
+```{r iris}
+dim(iris)
+names(iris)
+str(iris)
+attributes(iris)
+```
+
+Ahora, veamos las primeras cinco filas de los datos. las primeras o las ultimas filas del conjunto pueden ser mostradas con *head()* o *tail()*.
+
+```{r}
+iris[1:5,]
+head(iris)
+tail(iris)
+```
+
+Tambien podemos mostrar los valores de una sola columna. Por ejemplo, los 10 primeros valores de *Sepal.Length* pueden ser mostrados con cualquiera de los codigos siguientes:
+
+```{r}
+iris[1:10, "Sepal.Length"]
+iris$Sepal.Length[1:10]
+```
+
+## Explorar variables individuales
+
+La distribucion de cada variable numerica puede ser verificada con la funcion *summary()*, que regresa los valores minimo, maximo, media, mediana y el primer (25%) y tercer (75%) cuartiles. Para factores (variables categoricas), muestra la frecuencia de cada nivel.
+
+```{r}
+summary(iris)
+```
+
+La media, la mediana y el rango tambien pueden obtenerse con las funciones *mean()*, *median()*, y *range()* Los cuartiles y percentiles se obtienen con la funcion *quantile()* como se muestra:
+
+```{r}
+quantile(iris$Sepal.Length)
+quantile(iris$Sepal.Length, c(.1,.3,.65))
+```
+
+Ahora veamos la viarianza de *Sepal.Length* con *var()* y su diistribuicion mediante histograma y densidad usando las funciones *hist()* y *density()* (ver Figuras 1 y 2).
+
+```{r}
+var(iris$Sepal.Length)
+hist(iris$Sepal.Length)
+```
+**Figura 1.** Histograma
+```{r}
+plot(density(iris$Sepal.Length))
+```
+**Figura 2.** Densidad
+
+La frecuencia de los factores puede ser calculada con la funcion *table()* y luego graficada como tarta con *pie()* o grafica de barras con *barplot()* (ver Figuras 3 y 4).
+
+```{r}
+table(iris$Species)
+pie(table(iris$Species))
+```
+**Figura 3.** Grafico de tarta
+```{r}
+barplot(table(iris$Species))
+```
+**Figura 4.** Grafico de barras
+
+
