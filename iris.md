@@ -2,6 +2,7 @@
 title: "Iris"
 author: "Simon Ballesteros"
 date: "19 de febrero de 2018"
+output html_document: yes
 output: 
   html_document: 
     keep_md: yes
