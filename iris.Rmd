@@ -2,9 +2,8 @@
 title: "Iris"
 author: "Simon Ballesteros"
 date: "19 de febrero de 2018"
-output: 
-  html_document: 
-    keep_md: yes
+output html_document: yes
+output: html_document
 ---
 
 ## Aprender R con iris
@@ -14,7 +13,7 @@ Iris es un conjunto de datos ampliamente conocido. Introducido por Fisher (1936)
 ## Un vistazo a los datos
 Los datos de _iris_ se usan en este articulo para demostrar la exploracion de datos con R. En primer lugar verificamos el tamano y la estructura del conjunto de datos. La dimension y los nombres de los datos se obtienen respectivamente con las funciones *dim()* y *names()*. Las funciones *str()* y *attributes()* devuelven la estructura y los atributos de los datos.
 
-```{r iris}
+```{r iris, echo=TRUE}
 dim(iris)
 names(iris)
 str(iris)
