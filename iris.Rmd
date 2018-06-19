@@ -2,7 +2,7 @@
 title: "Iris"
 author: "Simon Ballesteros"
 date: "19 de febrero de 2018"
-output: html_document
+output: html_notebook
 ---
 
 ## Aprender R con iris
